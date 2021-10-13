@@ -1,17 +1,21 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import youtube from '../apis/youtube';
 
 class App extends React.Component {
-  state = { fromChild: '' };
-
-  handleCallBack = (nameFromChild) =>{
-    this.setState({fromChild: nameFromChild})
-  }
+  onTermSubmit = async (term) => {
+    const results = await youtube.get('/search', {
+      params: {
+        q: term,
+      },
+    });
+    console.log(results);
+  };
 
   render() {
     return (
       <div>
-        <SearchBar parentCallBackFunction={this.handleCallBack}/>
+        <SearchBar onFormSubmit={this.onTermSubmit} />
       </div>
     );
   }
