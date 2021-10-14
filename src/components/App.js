@@ -18,7 +18,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
         <SearchBar onFormSubmit={this.onTermSubmit} />
 
         <VideoList videos={this.state.videos}/>
