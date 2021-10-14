@@ -1,11 +1,11 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-  state = { term: '' };
+  state = { term: 'james bond' };
 
   onInputChange = (e) => {
     this.setState({ term: e.target.value });
-    console.log(this.state.term);
+   
   };
 
   onFormSubmit = (e) => {
