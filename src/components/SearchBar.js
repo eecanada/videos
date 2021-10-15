@@ -1,7 +1,7 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-  state = { term: 'james bond' };
+  state = { term: '' };
 
   onInputChange = (e) => {
     this.setState({ term: e.target.value });
